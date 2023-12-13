@@ -11,7 +11,6 @@ export const Profile = ({
   },
 }) => {
   return (
-    // <div className={[s.red, online ? s.online : s.offline]} key={tag}></div>
     <div className={styles.section_profile} key={tag}>
       <div className={[styles.description]}>
         <img src={avatar} alt="User avatar" className={styles.avatar} />
@@ -20,10 +19,10 @@ export const Profile = ({
         <p className="location">{location}</p>
       </div>
 
-      <ul className={[styles.stats]}>
+      <ul className={styles.stats}>
         <li>
           <span className="label">Followers: </span>
-          <span className={styles.nolist}>{followers}</span>
+          <span className="quantity">{followers}</span>
         </li>
         <li>
           <span className="label">Views: </span>
@@ -47,7 +46,7 @@ Profile.propTypes = {
     stats: PropTypes.shape({
       followers: PropTypes.number.isRequired,
       views: PropTypes.number.isRequired,
-      likes: PropTypes.number,
+      likes: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
 };
